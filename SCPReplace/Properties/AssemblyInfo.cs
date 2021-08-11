@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
 [assembly: AssemblyTitle("SCPReplace")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("SCPReplace Made By Cheng Cheng#7773")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Canhui Server")]
 [assembly: AssemblyProduct("SCPReplace")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("© 2021-2021 Canhui Server. All rights reserved")]
+[assembly: AssemblyTrademark("© 2021-2021 Canhui Server. All rights reserved")]
 [assembly: AssemblyCulture("")]
 
 // 將 ComVisible 設為 false 可對 COM 元件隱藏
