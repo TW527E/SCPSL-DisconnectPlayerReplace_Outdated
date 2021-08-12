@@ -1,7 +1,7 @@
 # SCP Replace
 ![EXILED CI](https://github.com/galaxy119/EXILED/workflows/EXILED%20CI/badge.svg?branch=2.0.0)
 <a href="https://discord.gg/JQcM2WwYfH">
-  <img src="https://img.shields.io/discord/77066269923947316?logo=discord" alt="Chat on Discord">
+  <img src="https://img.shields.io/discord/770662699239473162?logo=discord" alt="Chat on Discord">
 </a><br>
 Made By Canhui Server Enginner Cheng Cheng#7773
 
