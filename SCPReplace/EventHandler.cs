@@ -10,13 +10,6 @@ namespace SCPReplace
 {
     public class EventHandler
     {
-        public readonly Plugin<Configs> plugin;
-        public EventHandler(Plugin<Configs> plugin) => this.plugin = plugin;
-
-        public EventHandler()
-        {
-        }
-
         public void OnPlayerLeft(LeftEventArgs ev)
         {
             if (ev.Player.Team == Team.SCP)
@@ -32,7 +25,7 @@ namespace SCPReplace
                     player.SetRole(ev.Player.Role, true, false);
                     player.Health = savedHealth;
                     Timing.CallDelayed(0.25f, () => player.Position = savedPos);
-                    Map.Broadcast(duration: 15, message: $"{ SCPReplace.SCPReplaceRef.Config.OnScpReplace.Replace("{SCPRole}", ev.Player.Role.ToString()).Replace("Scp", "SCP - ")}");
+                    Map.Broadcast(duration: 15, message: $"{ SCPReplace.SCPReplaceRef.Config.OnScpReplace.Replace("%SCPRole%", ev.Player.Role.ToString()).Replace("Scp", "SCP - ")}");
                 }
             }
         }

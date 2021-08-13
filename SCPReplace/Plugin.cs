@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Exiled.API.Features;
-using Exiled.Events.EventArgs;
-using MEC;
-using UnityEngine;
+﻿using Exiled.API.Features;
 using Player = Exiled.Events.Handlers.Player;
 
 namespace SCPReplace
