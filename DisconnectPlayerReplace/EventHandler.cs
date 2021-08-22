@@ -38,7 +38,7 @@ namespace DisconnectPlayerReplace
                 player.SetRole(pLayer.Role, SpawnReason.Respawn, false);
                 player.Health = savedHealth;
                 Timing.CallDelayed(0.25f, () => player.Position = savedPos);
-                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%SCPRole%", pLayer.Role.ToString()).Replace("Scp", "SCP - ")}");
+                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", pLayer.Role.ToString()).Replace("Scp", "SCP - ")}");
                 Cassie.Message(message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", pLayer.Role.ToString())}", false, DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.IsNoisy);
             }
         }

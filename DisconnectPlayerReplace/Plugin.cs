@@ -6,7 +6,7 @@ namespace DisconnectPlayerReplace
 	public class DisconnectPlayerReplace : Plugin<Configs>
 	{
 		public static DisconnectPlayerReplace DisconnectPlayerReplaceRef;
-		public override string Prefix => "SCPReplace";
+		public override string Prefix => "DisconnectPlayerReplace";
 
 		private EventHandler eventHandlers;
 
