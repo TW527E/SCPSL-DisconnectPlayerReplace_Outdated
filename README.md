@@ -12,11 +12,11 @@ When the Player leaves the server, it is automatically replaced by a spectator.
 ```yaml
 DisconnectPlayerReplace:
   is_enabled: true
-  only_scp: false
+  only_scp: true
   # Cassie
   is_noisy: true
   # You can find all words at here : https://steamcommunity.com/sharedfiles/filedetails/?id=1577299753
-  cassie_message: '%Role% is been charge'
+  cassie_message: Some 1 is leave
   # When Player Replace Message
   on_player_replace: <color=red>%Role%</color> <color=green> is been Replaced</color>.
 ```
