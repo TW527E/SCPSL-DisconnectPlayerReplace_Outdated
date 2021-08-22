@@ -7,8 +7,8 @@
     <ProjectGuid>{2CD46172-B3A8-424E-844C-19950FCB4391}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SCPReplace</RootNamespace>
-    <AssemblyName>SCPReplace</AssemblyName>
+    <RootNamespace>DisconnectPlayerReplace</RootNamespace>
+    <AssemblyName>DisconnectPlayerReplace</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

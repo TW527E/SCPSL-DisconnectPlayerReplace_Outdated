@@ -1,18 +1,18 @@
 ﻿using Exiled.API.Features;
 using Player = Exiled.Events.Handlers.Player;
 
-namespace SCPReplace
+namespace DisconnectPlayerReplace
 {
-	public class SCPReplace : Plugin<Configs>
+	public class DisconnectPlayerReplace : Plugin<Configs>
 	{
-		public static SCPReplace SCPReplaceRef;
+		public static DisconnectPlayerReplace DisconnectPlayerReplaceRef;
 		public override string Prefix => "SCPReplace";
 
 		private EventHandler eventHandlers;
 
 		public override void OnEnabled()
 		{
-			SCPReplaceRef = this;
+			DisconnectPlayerReplaceRef = this;
 			eventHandlers = new EventHandler();
 
 			Player.Left += eventHandlers.OnPlayerLeft;
@@ -24,7 +24,7 @@ namespace SCPReplace
 		{
 			Player.Left -= eventHandlers.OnPlayerLeft;
 			eventHandlers = null;
-			SCPReplaceRef = null;
+			DisconnectPlayerReplaceRef = null;
 			base.OnDisabled();
 		}
 	}

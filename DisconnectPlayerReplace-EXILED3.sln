@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCPReplace", "SCPReplace\SCPReplace.csproj", "{2CD46172-B3A8-424E-844C-19950FCB4391}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisconnectPlayerReplace", "DisconnectPlayerReplace\DisconnectPlayerReplace.csproj", "{2CD46172-B3A8-424E-844C-19950FCB4391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
