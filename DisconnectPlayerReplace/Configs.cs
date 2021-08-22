@@ -10,7 +10,7 @@ namespace DisconnectPlayerReplace
         [Description("Cassie")]
         public bool IsNoisy { get; set; } = true;
         [Description("You can find all words at here : https://steamcommunity.com/sharedfiles/filedetails/?id=1577299753")]
-        public string CassieMessage { get; set; } = "SCP is leave";
+        public string CassieMessage { get; set; } = "Some 1 is leave";
         [Description("When Player Replace Message")]
         public string OnPlayerReplace { get; set; } = "<color=red>%Role%</color> <color=green> is been Replaced</color>.";
     }
