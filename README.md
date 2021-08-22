@@ -5,6 +5,8 @@
 </a><br>
 Made By Canhui Server Enginner Cheng Cheng#7773
 
+**For EXILED 3.0**
+
 # Main Features
 When the Player leaves the server, it is automatically replaced by a spectator.
 
