@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Features;
 using Player = Exiled.Events.Handlers.Player;
+using Server = Exiled.Events.Handlers.Server;
 
 namespace DisconnectPlayerReplace
 {
@@ -15,14 +16,16 @@ namespace DisconnectPlayerReplace
 			DisconnectPlayerReplaceRef = this;
 			eventHandlers = new EventHandler();
 
-			Player.Left += eventHandlers.OnPlayerLeft;
+            Server.RoundStarted += eventHandlers.OnRoundStarted;
+            Server.RoundEnded += eventHandlers.OnRoundEnded;
 
 			base.OnEnabled();
 		}
 
 		public override void OnDisabled()
 		{
-			Player.Left -= eventHandlers.OnPlayerLeft;
+			Server.RoundStarted -= eventHandlers.OnRoundStarted;
+			Server.RoundEnded -= eventHandlers.OnRoundEnded;
 			eventHandlers = null;
 			DisconnectPlayerReplaceRef = null;
 			base.OnDisabled();

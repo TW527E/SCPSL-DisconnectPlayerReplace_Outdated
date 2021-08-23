@@ -4,22 +4,46 @@ using Exiled.Events.EventArgs;
 using Exiled.API.Enums;
 using MEC;
 using Player = Exiled.API.Features.Player;
+using PlayerEvent = Exiled.Events.Handlers.Player;
 
 namespace DisconnectPlayerReplace
 {
     public class EventHandler
     {
+        private EventHandler eventHandlers;
+
+        public void OnRoundStarted()
+        {
+            eventHandlers = new EventHandler();
+            PlayerEvent.Left += eventHandlers.OnPlayerLeft;
+        }
+
+        public void OnRoundEnded(RoundEndedEventArgs ev)
+        {
+            PlayerEvent.Left -= eventHandlers.OnPlayerLeft;
+        }
+
         public void OnPlayerLeft(LeftEventArgs ev)
         {
-            if (DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnlyScp == false)
+            if (ev.Player.Team != Team.RIP)
             {
-                ChangePlayer(ev.Player);
-            }
-            else
-            {
-                if (ev.Player.Team == Team.SCP)
+                if (ev.Player.Team == Team.TUT && DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.CanTutorial == false)
                 {
-                    ChangePlayer(ev.Player);
+                    return;
+                }
+                else
+                {
+                    if (DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnlyScp == false)
+                    {
+                        ChangePlayer(ev.Player);
+                    }
+                    else
+                    {
+                        if (ev.Player.Team == Team.SCP)
+                        {
+                            ChangePlayer(ev.Player);
+                        }
+                    }
                 }
             }
         }
