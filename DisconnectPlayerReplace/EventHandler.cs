@@ -18,8 +18,9 @@ namespace DisconnectPlayerReplace
             PlayerEvent.Left += eventHandlers.OnPlayerLeft;
         }
 
-        public void OnRoundEnded(RoundEndedEventArgs ev)
+        public void OnRoundEnded(RoundEndedEventArgs args)
         {
+            var meow = args;
             PlayerEvent.Left -= eventHandlers.OnPlayerLeft;
         }
 
@@ -48,7 +49,7 @@ namespace DisconnectPlayerReplace
             }
         }
 
-        public void ChangePlayer(Player pLayer)
+        public void ChangePlayer(Player ply)
         {
             var RIPPlayer = Player.Get(Team.RIP);
             int count = RIPPlayer.Count();
@@ -57,13 +58,12 @@ namespace DisconnectPlayerReplace
                 int cplayer = UnityEngine.Random.Range(0, count);
                 var spectators = RIPPlayer.ToList();
                 var player = spectators[cplayer];
-                player.SetRole(pLayer.Role, SpawnReason.Respawn, false);
-                player.Health = pLayer.Health;
-                Timing.CallDelayed(1f, () => player.Position = pLayer.Position);
-                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", pLayer.Role.ToString()).Replace("Scp", "SCP - ")}");
-                Cassie.Message(message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", pLayer.Role.ToString())}", false, DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.IsNoisy);
+                player.SetRole(ply.Role, SpawnReason.Respawn, false);
+                player.Health = ply.Health;
+                Timing.CallDelayed(1f, () => player.Position = ply.Position);
+                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString()).Replace("Scp", "SCP - ")}");
+                Cassie.Message(message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString())}", false, DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.IsNoisy);
             }
         }
-
     }
 }
