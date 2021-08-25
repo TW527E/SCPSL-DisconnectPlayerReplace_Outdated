@@ -58,9 +58,13 @@ namespace DisconnectPlayerReplace
                 int cplayer = UnityEngine.Random.Range(0, count);
                 var spectators = RIPPlayer.ToList();
                 var player = spectators[cplayer];
+                var health = ply.Health;
                 player.SetRole(ply.Role, SpawnReason.Respawn, false);
-                player.Health = ply.Health;
-                Timing.CallDelayed(1f, () => player.Position = ply.Position);
+                Timing.CallDelayed(1.8f, () =>
+                {
+                    player.Health = health;
+                    player.Position = ply.Position;
+                });
                 Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString()).Replace("Scp", "SCP - ")}");
                 Cassie.Message(message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString())}", false, DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.IsNoisy);
             }
