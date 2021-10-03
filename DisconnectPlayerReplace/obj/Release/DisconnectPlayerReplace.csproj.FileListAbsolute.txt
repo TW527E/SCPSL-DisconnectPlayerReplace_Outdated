@@ -310,3 +310,4 @@ E:\Github\DisconnectPlayerReplace\DisconnectPlayerReplace\obj\Release\Disconnect
 E:\Github\DisconnectPlayerReplace\DisconnectPlayerReplace\obj\Release\DisconnectPlayerReplace.csproj.CopyComplete
 E:\Github\DisconnectPlayerReplace\DisconnectPlayerReplace\obj\Release\DisconnectPlayerReplace.dll
 E:\Github\DisconnectPlayerReplace\DisconnectPlayerReplace\obj\Release\DisconnectPlayerReplace.pdb
+E:\Github\DisconnectPlayerReplace\DisconnectPlayerReplace\bin\Release\Newtonsoft.Json.dll

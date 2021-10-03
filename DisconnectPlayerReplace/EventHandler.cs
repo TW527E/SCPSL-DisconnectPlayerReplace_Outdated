@@ -5,36 +5,37 @@ using Exiled.API.Enums;
 using MEC;
 using Player = Exiled.API.Features.Player;
 using PlayerEvent = Exiled.Events.Handlers.Player;
+using System.Collections.Generic;
+using Exiled.API.Features.Items;
 
 namespace DisconnectPlayerReplace
 {
     public class EventHandler
     {
-        private EventHandler eventHandlers;
+        public readonly DisconnectPlayerReplace Plugin;
+        public EventHandler(DisconnectPlayerReplace plugin) => this.Plugin = plugin;
 
         public void OnRoundStarted()
         {
-            eventHandlers = new EventHandler();
-            PlayerEvent.Left += eventHandlers.OnPlayerLeft;
+            PlayerEvent.Left += OnPlayerLeft;
         }
 
         public void OnRoundEnded(RoundEndedEventArgs args)
         {
-            var meow = args;
-            PlayerEvent.Left -= eventHandlers.OnPlayerLeft;
+            PlayerEvent.Left -= OnPlayerLeft;
         }
 
         public void OnPlayerLeft(LeftEventArgs ev)
         {
             if (ev.Player.Team != Team.RIP)
             {
-                if (ev.Player.Team == Team.TUT && DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.CanTutorial == false)
+                if (ev.Player.Team == Team.TUT && DisconnectPlayerReplace.Instance.Config.CanTutorial == false)
                 {
                     return;
                 }
                 else
                 {
-                    if (DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnlyScp == false)
+                    if (DisconnectPlayerReplace.Instance.Config.OnlyScp == false)
                     {
                         ChangePlayer(ev.Player);
                     }
@@ -64,10 +65,23 @@ namespace DisconnectPlayerReplace
                 {
                     player.Health = health;
                     player.Position = ply.Position;
+                    if (ply.Team != Team.SCP)
+                    {
+                        InvReplace(player, ply);
+                    }
                 });
-                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString()).Replace("Scp", "SCP - ")}");
-                Cassie.Message(message: $"{ DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString())}", false, DisconnectPlayerReplace.DisconnectPlayerReplaceRef.Config.IsNoisy);
+                Map.Broadcast(duration: 15, message: $"{ DisconnectPlayerReplace.Instance.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString()).Replace("Scp", "SCP - ")}");
+                Cassie.Message(message: $"{ DisconnectPlayerReplace.Instance.Config.OnPlayerReplace.Replace("%Role%", ply.Role.ToString())}", false, DisconnectPlayerReplace.Instance.Config.IsNoisy);
             }
+        }
+        public List<Item> Items = new List<Item>();
+        public void InvReplace(Player player, Player ply)
+        {
+            player.ClearInventory();
+            var TargetItems = ply.Items;
+            foreach (Item item in TargetItems)
+                Items.Add(item);
+            player.AddItem(Items);
         }
     }
 }

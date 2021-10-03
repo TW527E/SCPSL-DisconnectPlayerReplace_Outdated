@@ -8,6 +8,8 @@ namespace DisconnectPlayerReplace
         public bool IsEnabled { get; set; } = true;
         public bool OnlyScp { get; set; } = false;
         public bool CanTutorial { get; set; } = false;
+        [Description("Only those who are replaced perform broadcasting")]
+        public bool Onlyreplacedbroadcast { get; set; } = false;
         [Description("Cassie")]
         public bool IsNoisy { get; set; } = true;
         [Description("You can find all words at here : https://steamcommunity.com/sharedfiles/filedetails/?id=1577299753")]
