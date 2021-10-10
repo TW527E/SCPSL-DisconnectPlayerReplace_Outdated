@@ -4,7 +4,7 @@
 <a href="https://discord.gg/JQcM2WwYfH">
   <img src="https://img.shields.io/discord/770662699239473162?logo=discord" alt="Chat on Discord">
 </a><br>
-Made By Canhui Server Enginner Cheng Cheng#7773
+Made by 誠誠#7773
 
 **For EXILED 3.0**
 
