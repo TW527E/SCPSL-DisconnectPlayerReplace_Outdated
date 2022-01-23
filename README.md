@@ -1,10 +1,10 @@
 # Disconnect Player Replace
 ![EXILED CI](https://github.com/galaxy119/EXILED/workflows/EXILED%20CI/badge.svg?branch=2.0.0)
 ![GitHub Release](https://img.shields.io/github/release/TW527E/DisconnectPlayerReplace/all.svg?style=flat)
-<a href="https://discord.gg/vCTtKazpZz">
-  <img src="https://img.shields.io/discord/892799334289145896?logo=discord" alt="Chat on Discord">
+<a href="https://t.me/+lHO7epHtC3NlYTNl">
+  <img src="https://img.shields.io/badge/-Chat%20on%20Telegram-blue" alt="Chat on Telegram"> <img src="https://img.shields.io/badge/-Chat%20Use%20Chinese-yellow" alt="Chinese">
 </a><br>
-Made by 誠誠#7773
+Made by 誠誠#9925 <img src="https://img.shields.io/badge/-Taiwan-ff1f4b" alt="Taiwan">
 
 **For EXILED 3.0**
 
